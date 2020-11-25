@@ -30,5 +30,6 @@ pipeline{
                     sh "docker-compose pull && docker-compose up -d"
                 }
             }
+            slackSend color: "good", message: "Message from Jenkins Pipeline"
         }
 }
