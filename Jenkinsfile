@@ -28,8 +28,9 @@ pipeline{
             stage('Deploy App'){
                 steps{
                     sh "docker-compose pull && docker-compose up -d"
+                    slackSend color: "good", message: "Message from Jenkins Pipeline"
                 }
             }
-            slackSend color: "good", message: "Message from Jenkins Pipeline"
+            
         }
 }
